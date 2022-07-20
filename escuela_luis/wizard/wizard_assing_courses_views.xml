@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- wizard.assing.courses form view -->
+    <record id="wizard_assing_courses_view_form" model="ir.ui.view">
+        <field name="name">wizard.assing.courses.view.form</field>
+        <field name="model">wizard.assing.courses</field>
+        <field name="arch" type="xml">
+            <form string="Asociar una escuela">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="courses_id"/>
+                    </group>
+                    <footer>
+						<button name="asignador" string="Asignar" type="object" class="btn-primary"/>
+						<button string="Cancel" special="cancel" class="oe_link"/>
+					</footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- wizard.assing.courses action window -->
+    <record id="wizard_assing_courses_action" model="ir.actions.act_window">
+        <field name="name">wizard.assing.courses.action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wizard.assing.courses</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding="utf-8"?>
+<odoo>
+	<!--<report id = "courses_reports"
+		string = "Reporte Cursos"
+		model = "qualsys.courses"
+		report_type = "qweb-pdf"
+		name = "qualsys_courses.courses_template"
+		menu = "True"/>-->
+</odoo>

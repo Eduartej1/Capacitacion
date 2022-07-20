@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding="utf-8"?>
+<odoo>
+	<template id = "qualsys_school_template">
+		<t t-call = "web.html_container">
+			<t t-foreach="docs" t-as="school">
+				<t t-call = "web.external_layout">
+					<div class="page">
+						<h1>Datos Generales</h1>
+						<td><strong>Nombre: </strong>
+						<t t-esc="school.name"/></td>
+						<p></p>
+						<td><strong>Calle: </strong>
+						<t t-esc="school.street"/></td>
+						<p></p>
+						<td><strong>Número: </strong>
+						<t t-esc="school.street_number"/></td>
+						<p></p>
+						<td><strong>Ciudad: </strong>
+						<t t-esc="school.city"/></td>
+						<p></p>
+						<td><stong>Estado: </stong>
+						<t t-raw="school.state.name"/></td>
+						<p></p>
+						<td><strong>País: </strong>
+						<t t-raw="school.country.name"/></td>
+						<p></p>
+						<td><strong>Telefono 1: </strong>
+						<t t-esc="school.phone_one"/></td>
+						<p></p>
+						<td><strong>Telefono 2: </strong>
+						<t t-esc="school.phone_two"/></td>
+						<p></p>
+						<td><strong>Correo: </strong>
+						<t t-esc="school.email"/></td>
+						<p></p>
+						<td><strong>Cursos Asignados: </strong>
+						<t t-raw="school.courses_number"/></td>
+						<p></p>
+						<t t-if="school.courses_ids">
+							<h3>Cursos</h3>
+							<table class="table table-condensed">
+								<thead>
+									<tr>
+										<th><strong>Codigo</strong></th>
+										<th><strong>Nombre del curso</strong></th>
+										<th><strong>Fecha inicio</strong></th>
+										<th><strong>Fecha fin</strong></th>
+										<th><strong>Duracion horas</strong></th>
+										<th><strong>Instructor</strong></th>
+										<th><strong>No. Asistentes</strong></th>
+									</tr>
+								</thead>
+								<body>
+									<tr t-foreach="school.courses_ids" t-as="courses">
+										<td><span t-esc="courses.code"/></td>
+										<td><span t-esc="courses.name"/></td>
+										<td><span t-raw="courses.start_date"/></td>
+										<td><span t-raw="courses.end_date"/></td>
+										<td><span t-raw="courses.duration"/></td>
+										<td><span t-raw="courses.teacher_id.name"/></td>
+										<td><span t-raw="courses.attendees_number"/></td>
+									</tr>
+								</body>
+							</table>
+						</t>
+						<br/>
+						<t t-if="school.courses_ids.attendees_ids">
+							<h3>Asistentes</h3>
+							<table class="table table-condensed">
+								<thead>
+									<tr>
+										<th><strong>Curso</strong></th>
+										<th><strong>Nombre</strong></th>
+										<th><strong>Edad</strong></th>
+									</tr>
+								</thead>
+								<body>
+									<tr t-foreach="school.courses_ids.attendees_ids" t-as="attendees">
+										<td><span t-esc="attendees.courses_id.name"/></td>
+										<td><span t-esc="attendees.partner_id.name"/></td>
+										<td><span t-esc="attendees.age"/></td>
+									</tr>
+								</body>
+							</table>
+						</t>
+						<p style="page-break-after:always;"></p>
+					</div>
+				</t>
+			</t>
+		</t>
+	</template>
+</odoo>
