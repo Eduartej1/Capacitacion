@@ -1,5 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_qualsys_school,access_qualsys_school,model_qualsys_school,,1,1,1,1
-access_qualsys_courses,access_qualsys_courses,model_qualsys_courses,,1,1,1,1
-access_qualsys_attendees,access_qualsys_attendees,model_qualsys_attendees,,1,1,1,1
-escuela_luis.access_wizard_assing_courses,access_wizard_assing_courses,escuela_luis.model_wizard_assing_courses,,1,1,1,1
